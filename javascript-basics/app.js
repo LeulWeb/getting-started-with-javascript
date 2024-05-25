@@ -94,3 +94,69 @@ console.log(typeof companyName)
 // null
 let myAge = null
 console.log(typeof myAge)
+
+
+// Array
+
+let fruitList =[ "orange","Banana","Pineapple","apple"]
+
+// In javascript array items are stored inside [] square brackets, when initializing a new array, and the items are separated by ,  comma
+
+console.log(typeof fruitList)  //  are type objects
+
+// how to know the length of any array, .length
+console.log(fruitList.length) // 4 
+
+
+//  how to access items inside the array
+console.log(fruitList[0])
+console.log(fruitList[3])
+
+
+// how to change items value inside the array
+fruitList[2]= "Mango"
+console.log(fruitList)
+
+
+// Brain storm 🤯
+let myArray = ["Hello","Heyy"]
+
+myArray[5]= "World"
+
+console.log(myArray);  // this will fill the array be giving empty/ undefined values
+console.log(myArray[2])
+
+
+// how to add items to an array
+console.log(fruitList)
+
+fruitList.push("PineApple") // add item to the end of the array
+console.log(fruitList) //
+
+fruitList.pop() // remove the last item
+console.log(fruitList)
+
+fruitList.shift() // remove the very first element
+console.log(fruitList) //
+
+fruitList.unshift("Orange") // add the very first element
+console.log(fruitList) //
+
+
+// we can also define an array using constructor
+let movies = new Array();
+movies[0] = "Avengers"
+movies[1] = "Avengers 2"
+console.log(movies) //
+
+// function return
+
+function square(x){
+    let result = Math.pow(x,2)
+    // console.log(result) //
+
+    // return result
+}
+
+let result = square(2)
+console.log(result)
