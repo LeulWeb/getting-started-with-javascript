@@ -7,8 +7,8 @@ let car1 = {
   isMoving: false,
 
   //   methods
-  startOrStopCar : function(){
-    this.isMoving =  !this.isMoving
+  startOrStopCar: function () {() =>
+    this.isMoving = !this.isMoving;
   },
 
   accelerate: function (parameter) {
@@ -18,17 +18,27 @@ let car1 = {
       if (this.currentSpeed < 600) {
         this.currentSpeed = this.currentSpeed + parameter;
       } else {
-        alert("You have reached your maximum limit")
+        alert("You have reached your maximum limit");
       }
     }
   },
 
-  slowDown: () => {
-    console.log("I will decrease my speed");
+  slowDown: function () {
+    if (this.isMoving) {
+      if (this.currentSpeed <= 0) {
+        this.currentSpeed = 0;
+        this.isMoving = false;
+      } else {
+        this.currentSpeed = this.currentSpeed - 50;
+      }
+    } else {
+      alert("Your car is not moving");
+    }
   },
 
-  stop: () => {
-    console.log(" I will stop moving");
+  stop: function () {
+    this.currentSpeed = 0;
+    this.isMoving = false;
   },
 };
 
@@ -39,7 +49,7 @@ let car1 = {
 // let speed = 200
 
 // console.log(speed)
-
+device - width;
 // function addSpeed (){
 //     speed = speed *1.5
 // }
@@ -52,17 +62,16 @@ console.log(car1.currentSpeed);
 
 let pedal = document.getElementById("pedal");
 let speed = document.getElementById("speed");
-let toggleStart = document.getElementById("start")
+let toggleStart = document.getElementById("start");
 
-toggleStart.addEventListener('click',()=>{
-    car1.startOrStopCar()
-    console.log(car1.isMoving)
-})
-
+toggleStart.addEventListener("click", () => {
+  car1.startOrStopCar();
+  console.log(car1.isMoving);
+});
 
 pedal.addEventListener("click", () => {
   car1.accelerate(100);
-  speed.innerHTML= car1.currentSpeed
+  speed.innerHTML = car1.currentSpeed;
 
   console.log(car1.currentSpeed);
 });
